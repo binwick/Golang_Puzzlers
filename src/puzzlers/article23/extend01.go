@@ -42,7 +42,9 @@ func main() {
 	})
 
 	fmt.Println("before click.")
+	lock.Lock()
 	box = 1
+	lock.Unlock()
 	button.Clicked.Broadcast() //7
 
 	wg.Wait()
